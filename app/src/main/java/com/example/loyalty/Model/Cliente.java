@@ -1,15 +1,19 @@
 package com.example.loyalty.Model;
 
 public class Cliente {
-    private String idCliente;
+    private String nome;
     private String login;
 
+    public Cliente(String nome, String login){
+        this.nome = nome;
+        this.login = login;
+    }
     public String getIdCliente() {
-        return idCliente;
+        return nome;
     }
 
     public void setIdCliente(String idCliente) {
-        this.idCliente = idCliente;
+        this.nome = nome;
     }
 
     public String getLogin() {

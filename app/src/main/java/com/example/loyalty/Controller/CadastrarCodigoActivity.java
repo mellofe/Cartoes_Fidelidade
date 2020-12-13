@@ -10,18 +10,20 @@ import android.widget.Toast;
 import com.example.loyalty.Model.Cliente;
 import com.example.loyalty.Model.CodigoPontos;
 import com.example.loyalty.Model.Empresa;
+import com.example.loyalty.Model.Ponto;
 import com.example.loyalty.R;
 import com.example.loyalty.Util.BancoDadosSingleton;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 public class CadastrarCodigoActivity extends AppCompatActivity {
-    private Cliente c;  //inicializa manualmente
-    //private Pontos p;
-    private List<Empresa> empresa;
-    private List<CodigoPontos> codigos;
+    private Cliente cliente = new Cliente("Cliente","cliente@email.com");
+    private List<Ponto> pontos = new ArrayList<>();
+    private List<Empresa> empresa = new ArrayList<>();
+    private List<CodigoPontos> codigos = new ArrayList<>();
 
 
     @Override
@@ -70,21 +72,27 @@ public class CadastrarCodigoActivity extends AppCompatActivity {
     }
 
     public void Cadastrar(View v){
-        EditText edtCodigo = (EditText) findViewById(R.id.editTextCodigo);
+        EditText edtCodigo = findViewById(R.id.editTextCodigo);
         String Codigo = edtCodigo.getText().toString();
 
         for(int i = 0; i < codigos.size(); i++){
             if((codigos.get(i).getIdCodigo()).equals(Codigo)){
                 if((codigos.get(i).getValidado().equals(0))) {
                     //adiciona na classe Pontos
+                    Ponto p = new Ponto();
+                    p.setIdCliente(cliente.getIdCliente());
+                    p.setIdEmpresa(codigos.get(i).getIdEmpresa());
+                    p.setNumeroTotalPontos(codigos.get(i).getNumeroPontos());
+                    pontos.add(p);
+
                     ContentValues valores = new ContentValues();
                     valores.put("validado",1);
 
                     BancoDadosSingleton.getInstance().atualizar("codigo", valores, "idCodigo = '"+codigos.get(i).getIdCodigo()+"'");
                     if(codigos.get(i).getNumeroPontos() == 1)
-                        Toast.makeText(this,"Você ganhou" + String.valueOf(codigos.get(i).getNumeroPontos()) + "pontos",Toast.LENGTH_LONG).show();
+                        Toast.makeText(this,"Você ganhou " + String.valueOf(codigos.get(i).getNumeroPontos()) + " ponto",Toast.LENGTH_LONG).show();
                     else
-                        Toast.makeText(this,"Você ganhou" + String.valueOf(codigos.get(i).getNumeroPontos()) + "ponto",Toast.LENGTH_LONG).show();
+                        Toast.makeText(this,"Você ganhou " + String.valueOf(codigos.get(i).getNumeroPontos()) + " pontos",Toast.LENGTH_LONG).show();
                 }
             } else {
                 Toast.makeText(this,"Código de Pontos já validado" ,Toast.LENGTH_LONG).show();

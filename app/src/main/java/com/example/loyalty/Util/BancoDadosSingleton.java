@@ -41,7 +41,13 @@ public final class BancoDadosSingleton {
                     ");",
             "INSERT INTO codigo (idCodigo,idEmpresa, validado, numeroDePontos, valorDaCompra) VALUES" +
                     "('COD1', 1, 0, 5, 50);",
-
+            "CREATE TABLE pontos (" +
+                    "  idCliente TEXT PRIMARY KEY," +
+                    "  idEmpresa INTEGER NOT NULL," +
+                    "  numeroTotalPontos INTEGER NOT NULL," +
+                    "  CONSTRAINT fk_pontos_cliente FOREIGN KEY (idCliente) REFERENCES cliente (login)," +
+                    "  CONSTRAINT fk_pontos_empresa FOREIGN KEY (idEmpresa) REFERENCES empresa (idEmpresa)" +
+                    ");",
     };
 
     private BancoDadosSingleton() {
