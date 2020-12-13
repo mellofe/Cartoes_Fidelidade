@@ -9,6 +9,20 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Loyalty">
+        <activity android:name=".onboarding2"></activity>
+        <activity android:name=".onboarding3"></activity>
+        <activity android:name=".login"></activity>
+        <activity android:name=".cadastro_cliente"></activity>
+        <activity android:name=".cadastro_empresa"></activity>
+        <activity android:name=".codigo_cliente"></activity>
+        <activity android:name=".codigo_empresa"></activity>
+        <activity android:name=".home"></activity>
+        <activity android:name=".pagina_empresa"></activity>
+        <activity android:name=".pagina_empresa_codigo_resgate"></activity>
+        <activity android:name=".pagina_empresa_id"></activity>
+        <activity android:name=".pagina_gerar_codigo_resgate"></activity>
+        <activity android:name=".perfil_cliente"></activity>
+        <activity android:name=".perfil_empresa"></activity>
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
