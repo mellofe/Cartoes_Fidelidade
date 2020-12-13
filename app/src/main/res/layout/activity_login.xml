@@ -9,8 +9,8 @@
 
     <ImageView
         android:id="@+id/imageView4"
-        android:layout_width="375dp"
-        android:layout_height="192dp"
+        android:layout_width="360dp"
+        android:layout_height="182dp"
         android:layout_marginBottom="70dp"
         app:layout_constraintBottom_toTopOf="@+id/editTextUsuario"
         app:layout_constraintEnd_toEndOf="parent"
@@ -21,7 +21,7 @@
         android:id="@+id/buttonEntrar"
         android:layout_width="285dp"
         android:layout_height="40dp"
-        android:layout_marginBottom="45dp"
+        android:layout_marginBottom="60dp"
         android:background="@drawable/btn_bg"
         android:fontFamily="@font/poppins_bold"
         android:onClick="ButtonEntrar"
@@ -40,24 +40,24 @@
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="109dp"
-        android:layout_marginLeft="109dp"
         android:layout_marginBottom="90dp"
         android:fontFamily="@font/poppins_light"
         android:text="Ainda não tem uma conta?"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="48dp"
-        android:layout_marginLeft="48dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginLeft="42dp"
+        android:layout_marginStart="42dp"
+        android:layout_marginTop="20dp"
         android:fontFamily="@font/poppins_bold"
         android:text="Cadastrar empresa"
         android:textColor="#4A75CB"
+        android:textSize="12sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView2" />
@@ -66,18 +66,19 @@
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="48dp"
-        android:layout_marginRight="48dp"
+        android:layout_marginEnd="42dp"
+        android:layout_marginRight="42dp"
+        android:layout_marginTop="20dp"
         android:fontFamily="@font/poppins_bold"
         android:text="Cadastro de cliente"
         android:textColor="#4A75CB"
+        android:textSize="12sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
     <EditText
         android:id="@+id/editTextSenha"
-        android:layout_width="352dp"
+        android:layout_width="336dp"
         android:layout_height="50dp"
         android:layout_marginBottom="55dp"
         android:background="@drawable/input_bg"
@@ -88,6 +89,7 @@
         android:hint="Senha"
         android:inputType="textPersonName"
         android:padding="8dp"
+        android:password="true"
         android:textColorHighlight="#000000"
         android:textColorHint="#37474f"
         android:textSize="17sp"
@@ -97,7 +99,7 @@
 
     <EditText
         android:id="@+id/editTextUsuario"
-        android:layout_width="352dp"
+        android:layout_width="336dp"
         android:layout_height="50dp"
         android:layout_marginBottom="30dp"
         android:background="@drawable/input_bg"
@@ -122,6 +124,7 @@
         android:layout_marginTop="16dp"
         android:fontFamily="@font/poppins_light"
         android:text="Esqueceu a senha?"
+        android:textSize="12sp"
         app:layout_constraintEnd_toEndOf="@+id/editTextSenha"
         app:layout_constraintTop_toBottomOf="@+id/editTextSenha" />
 
