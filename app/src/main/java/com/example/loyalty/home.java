@@ -14,7 +14,7 @@ public class home extends AppCompatActivity {
 
     }
     public void ButtonCodigo(View view) {
-        Intent it = new Intent(getBaseContext(), codigo_cliente.class);
+        Intent it = new Intent(getBaseContext(), codigo_empresa.class);
         startActivity(it);
     }
 }
