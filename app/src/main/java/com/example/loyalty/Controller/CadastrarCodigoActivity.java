@@ -1,6 +1,7 @@
 package com.example.loyalty.Controller;
 
 import android.content.ContentValues;
+import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
@@ -13,6 +14,7 @@ import com.example.loyalty.Model.Empresa;
 import com.example.loyalty.Model.Ponto;
 import com.example.loyalty.R;
 import com.example.loyalty.Util.BancoDadosSingleton;
+import com.example.loyalty.home;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -105,5 +107,9 @@ public class CadastrarCodigoActivity extends AppCompatActivity {
         //vai ser o número de Pontos do cliente
 
 
+    }
+    public void ButtonHome(View view) {
+        Intent it = new Intent(getBaseContext(), home.class);
+        startActivity(it);
     }
 }
