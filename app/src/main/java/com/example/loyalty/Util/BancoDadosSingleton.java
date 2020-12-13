@@ -24,23 +24,23 @@ public final class BancoDadosSingleton {
                     "(1, 'acai@email.com', '123', 0, 10);",
 
             "CREATE TABLE cliente (" +
-                    "  login INTEGER PRIMARY KEY," +
+                    "  login TEXT PRIMARY KEY," +
                     "  senha TEXT NOT NULL," +
                     "  nome TEXT NOT NULL" +
                     ");",
             "INSERT INTO cliente (login, senha, nome) VALUES" +
-                    "(1, 'acai@email.com', '123', 0, 10);",
+                    "('cliente@email.com', '123','Jose');",
 
             "CREATE TABLE codigo (" +
-                    "  idCodigo INTEGER PRIMARY KEY AUTOINCREMENT," +
+                    "  idCodigo TEXT PRIMARY KEY," +
                     "  idEmpresa INTEGER NOT NULL," +
                     "  validado INTEGER NOT NULL," +
                     "  numeroDePontos INTEGER NOT NULL," +
                     "  valorDaCompra DOUBLE NOT NULL," +
                     "  CONSTRAINT fk_codigo_empresa FOREIGN KEY (idEmpresa) REFERENCES empresa (idEmpresa)" +
                     ");",
-            "INSERT INTO codigo (idEmpresa, validado, numeroDePontos, valorDaCompra) VALUES" +
-                    "(1, 0, 5, 50);",
+            "INSERT INTO codigo (idCodigo,idEmpresa, validado, numeroDePontos, valorDaCompra) VALUES" +
+                    "('COD1', 1, 0, 5, 50);",
 
     };
 
@@ -67,7 +67,13 @@ public final class BancoDadosSingleton {
     }
 
     public static BancoDadosSingleton getInstance(){
-        return INSTANCE;
+        if (BancoDadosSingleton.INSTANCE == null){
+            BancoDadosSingleton.INSTANCE = new BancoDadosSingleton();
+        }
+        //abre conexão caso esteja fechada
+        BancoDadosSingleton.INSTANCE.abrir();
+
+        return BancoDadosSingleton.INSTANCE;
     }
 
     // Insere um novo registro
