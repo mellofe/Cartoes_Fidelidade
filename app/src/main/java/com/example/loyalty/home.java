@@ -6,6 +6,8 @@ import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.loyalty.Controller.CadastrarCodigoActivity;
+
 public class home extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -14,7 +16,7 @@ public class home extends AppCompatActivity {
 
     }
     public void ButtonCodigo(View view) {
-        Intent it = new Intent(getBaseContext(), codigo_empresa.class);
+        Intent it = new Intent(getBaseContext(), CadastrarCodigoActivity.class);
         startActivity(it);
     }
 }
