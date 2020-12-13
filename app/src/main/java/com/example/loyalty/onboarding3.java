@@ -6,6 +6,8 @@ import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.loyalty.Controller.LoginActivity;
+
 public class onboarding3 extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -14,7 +16,7 @@ public class onboarding3 extends AppCompatActivity {
 
     }
     public void ButtonNext(View view) {
-        Intent it = new Intent(getBaseContext(), login.class);
+        Intent it = new Intent(getBaseContext(), LoginActivity.class);
         startActivity(it);
     }
 }
