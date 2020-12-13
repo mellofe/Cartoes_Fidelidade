@@ -8,6 +8,7 @@ public class pagina_empresa_codigo_resgate extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getSupportActionBar().hide();
         setContentView(R.layout.activity_empresa_codigo_resgate);
 
     }

@@ -1,12 +1,10 @@
 package com.example.loyalty.Controller;
 
-import androidx.appcompat.app.AppCompatActivity;
-
+import android.content.ContentValues;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.loyalty.Model.Cliente;
@@ -16,6 +14,8 @@ import com.example.loyalty.R;
 import com.example.loyalty.Util.BancoDadosSingleton;
 
 import java.util.List;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class CadastrarCodigoActivity extends AppCompatActivity {
     private Cliente c;  //inicializa manualmente
@@ -27,22 +27,23 @@ public class CadastrarCodigoActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getSupportActionBar().hide();
         setContentView(R.layout.activity_codigo_cliente);
 
         Cursor c = BancoDadosSingleton.getInstance().buscar("codigo", new String[]{"idCodigo","idEmpresa","validado","numeroDePontos","valorDaCompra"}, "","");
-        /*while(c.moveToNext()) {
+        while(c.moveToNext()) {
             int idC = c.getColumnIndex("idCodigo");
             int val = c.getColumnIndex("validado");
             int numDePontos = c.getColumnIndex("numeroDePontos");
             int idEmpresa = c.getColumnIndex("idEmpresa");
-            int valorComora = c.getColumnIndex("valorDaCompra");
+            int valorCompra = c.getColumnIndex("valorDaCompra");
 
             CodigoPontos cod = new CodigoPontos();
-            codigo.setidCodigo(c.getString(idC));
-            cod.setidEmpresa(c.getInt(idEmpresa));
+            cod.setIdCodigo(c.getString(idC));
+            cod.setIdEmpresa(c.getInt(idEmpresa));
             cod.setValidado(c.getInt(val));
             cod.setNumeroPontos(c.getInt(numDePontos));
-            cod.setidCodigo(c.getDouble(valorCompra));
+            cod.setValorCompra(c.getDouble(valorCompra));
 
             codigos.add(cod);
 
@@ -58,23 +59,23 @@ public class CadastrarCodigoActivity extends AppCompatActivity {
             int precoPonto = c1.getColumnIndex("precoPonto");
 
             Empresa e = new Empresa();
-            e.setidEmpresa(c1.getString(idEmp));
-            e.setlogin(c1.getString(login));
+            e.setIdEmpresa(c1.getString(idEmp));
+            e.setLogin(c1.getString(login));
             e.setInadimplente(c1.getInt(inadimplemte));
             e.setPrecoPonto(c1.getInt(precoPonto));
 
             empresa.add(e);
         }
-        c1.close();*/
+        c1.close();
     }
 
     public void Cadastrar(View v){
         EditText edtCodigo = (EditText) findViewById(R.id.editTextCodigo);
         String Codigo = edtCodigo.getText().toString();
 
-        /*for(int i = 0; i < codigos.size(); i++){
+        for(int i = 0; i < codigos.size(); i++){
             if((codigos.get(i).getIdCodigo()).equals(Codigo)){
-                if((codigos.get(i).getValidado().equals(0)){
+                if((codigos.get(i).getValidado().equals(0))) {
                     //adiciona na classe Pontos
                     ContentValues valores = new ContentValues();
                     valores.put("validado",1);
@@ -88,7 +89,7 @@ public class CadastrarCodigoActivity extends AppCompatActivity {
             } else {
                 Toast.makeText(this,"Código de Pontos já validado" ,Toast.LENGTH_LONG).show();
             }
-        }*/
+        }
         //quando clicar vai pegar o valor do edit text(valor da compra) transformar pra double,
         //ir na tabela codigo, vê se existe e se validado = 0
         //buscar na pelo codigo a empresa e o valorPonto dela

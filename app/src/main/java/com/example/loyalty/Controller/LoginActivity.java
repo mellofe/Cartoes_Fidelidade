@@ -1,7 +1,5 @@
 package com.example.loyalty.Controller;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -9,13 +7,15 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.loyalty.R;
-import com.example.loyalty.home;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class LoginActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getSupportActionBar().hide();
         setContentView(R.layout.activity_login);
     }
     public void ButtonEntrar(View view) {
