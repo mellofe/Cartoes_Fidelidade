@@ -31,12 +31,12 @@
 
     <TextView
         android:id="@+id/textViewCodigoGerado"
-        android:layout_width="62dp"
-        android:layout_height="30dp"
-        android:layout_marginBottom="40dp"
+        android:layout_width="166dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="45dp"
         android:ems="10"
+        android:gravity="center"
         android:inputType="textPersonName"
-        android:text="Ruqx0t"
         android:textSize="18sp"
         app:layout_constraintBottom_toTopOf="@+id/buttonGerar"
         app:layout_constraintEnd_toEndOf="parent"

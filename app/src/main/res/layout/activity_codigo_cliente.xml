@@ -22,12 +22,13 @@
         android:id="@+id/editTextCodigo"
         android:layout_width="163dp"
         android:layout_height="53dp"
-        android:layout_marginBottom="100dp"
+        android:layout_marginBottom="95dp"
         android:ems="10"
+        android:gravity="center"
         android:inputType="textPersonName"
-        android:text="Código"
         android:textColor="#FFFFFF"
         android:textColorHint="#FFFFFF"
+
         app:layout_constraintBottom_toTopOf="@+id/imageView2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />

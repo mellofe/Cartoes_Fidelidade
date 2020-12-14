@@ -85,7 +85,7 @@ public class CadastrarCodigoActivity extends AppCompatActivity {
                 Toast.makeText(this,"Código de Pontos já validado" ,Toast.LENGTH_LONG).show();
             }
         }
-        finish();
+       // finish();
     }
     public void ButtonHome(View view) {
         Intent it = new Intent(getBaseContext(), home.class);
