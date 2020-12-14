@@ -4,6 +4,7 @@ import android.content.ContentValues;
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -53,6 +54,8 @@ public class CadastrarCodigoActivity extends AppCompatActivity {
 
             codigos.add(cod);
 
+            Log.i("CODIGO: ", cod.getIdCodigo() + " " + cod.getTexto());
+
         }
         c.close();
 
@@ -64,6 +67,7 @@ public class CadastrarCodigoActivity extends AppCompatActivity {
 
         for(int i = 0; i < codigos.size(); i++){
             if((codigos.get(i).getTexto()).equals(Codigo)){
+                Log.i("CODIGO_FOR: ", codigos.get(i).getTexto());
                 if((codigos.get(i).getValidado().equals(0))) {
                     //adiciona na classe Pontos
                     Ponto p = new Ponto();
@@ -83,6 +87,7 @@ public class CadastrarCodigoActivity extends AppCompatActivity {
                 } else {
                     Toast.makeText(this,"Código de Pontos já validado" ,Toast.LENGTH_LONG).show();
                 }
+                break;
             } else {
                 Toast.makeText(this,"Código inválidado!" ,Toast.LENGTH_LONG).show();
             }

@@ -73,7 +73,7 @@ public class GerarCodigoActivity extends AppCompatActivity {
         codigo.setText("COD" + numeroDePontos + empresa.getIdEmpresa() + (codigos.size()+1));
 
         CodigoPontos cod = new CodigoPontos();
-        cod.setIdCodigo((codigos.size()+1));
+        //cod.setIdCodigo((codigos.size()+1));
         cod.setTexto("COD" + numeroDePontos + empresa.getIdEmpresa() + (codigos.size()+1));
         cod.setIdEmpresa(empresa.getIdEmpresa());
         cod.setValidado(0);

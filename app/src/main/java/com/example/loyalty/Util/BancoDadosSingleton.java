@@ -41,7 +41,7 @@ public final class BancoDadosSingleton {
                     "  CONSTRAINT fk_codigo_empresa FOREIGN KEY (idEmpresa) REFERENCES empresa (idEmpresa)" +
                     ");",
             "INSERT INTO codigo (texto,idEmpresa, validado, numeroDePontos, valorDaCompra) VALUES" +
-                    "('COD1', 1, 0, 5, 50);",
+                    "('COD101', 1, 0, 5, 50);",
             "CREATE TABLE pontos (" +
                     "  idCliente TEXT PRIMARY KEY," +
                     "  idEmpresa INTEGER NOT NULL," +
