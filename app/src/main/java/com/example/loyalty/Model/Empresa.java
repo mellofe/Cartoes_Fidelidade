@@ -1,40 +1,47 @@
 package com.example.loyalty.Model;
 
 public class Empresa {
-    private String idEmpresa;
+    private int idEmpresa;
     private String login;
-    private Integer inadimplente;
-    private Integer precoPonto;
+    private int inadimplente;
+    private double precoPonto;
 
-    public String getIdEmpresa() {
-        return idEmpresa;
+    public Empresa(int idEmpresa,String login, int inadimplente, int precoPonto ){
+        this.idEmpresa = idEmpresa;
+        this.login = login;
+        this.inadimplente = inadimplente;
+        this.precoPonto = precoPonto;
     }
 
-    public void setIdEmpresa(String idEmpresa) {
-        this.idEmpresa = idEmpresa;
+    public int getIdEmpresa() {
+        return idEmpresa;
     }
 
     public String getLogin() {
         return login;
     }
 
-    public void setLogin(String login) {
+    public void setLogin(String login){
         this.login = login;
     }
 
-    public Integer getInadimplente() {
+    public void setIdEmpresa(int idEmpresa){
+        this.idEmpresa = idEmpresa;
+    }
+
+    public int getInadimplente() {
         return inadimplente;
     }
 
-    public void setInadimplente(Integer inadimplente) {
+    public void setInadimplente(int inadimplente) {
         this.inadimplente = inadimplente;
     }
 
-    public Integer getPrecoPonto() {
+    public double getPrecoPonto() {
         return precoPonto;
     }
 
-    public void setPrecoPonto(Integer precoPonto) {
+    public void setPrecoPonto(double precoPonto) {
         this.precoPonto = precoPonto;
     }
 }

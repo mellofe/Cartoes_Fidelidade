@@ -32,14 +32,15 @@ public final class BancoDadosSingleton {
                     "('cliente@email.com', '123','Jose');",
 
             "CREATE TABLE codigo (" +
-                    "  idCodigo TEXT PRIMARY KEY," +
+                    "  idCodigo INTEGER PRIMARY KEY AUTOINCREMENT," +
+                    "  texto TEXT NOT NULL," +
                     "  idEmpresa INTEGER NOT NULL," +
                     "  validado INTEGER NOT NULL," +
                     "  numeroDePontos INTEGER NOT NULL," +
                     "  valorDaCompra DOUBLE NOT NULL," +
                     "  CONSTRAINT fk_codigo_empresa FOREIGN KEY (idEmpresa) REFERENCES empresa (idEmpresa)" +
                     ");",
-            "INSERT INTO codigo (idCodigo,idEmpresa, validado, numeroDePontos, valorDaCompra) VALUES" +
+            "INSERT INTO codigo (texto,idEmpresa, validado, numeroDePontos, valorDaCompra) VALUES" +
                     "('COD1', 1, 0, 5, 50);",
             "CREATE TABLE pontos (" +
                     "  idCliente TEXT PRIMARY KEY," +
