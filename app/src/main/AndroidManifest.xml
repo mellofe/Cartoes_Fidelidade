@@ -10,19 +10,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Loyalty">
-        <activity android:name=".Controller.LoginActivity"></activity>
+        <activity android:name=".Controller.Onboarding3Activity"></activity>
+        <activity android:name=".Controller.Onboarding2Activity" />
+        <activity android:name=".Controller.HomeActivity" />
+        <activity android:name=".Controller.LoginActivity" />
         <activity android:name=".Controller.CadastrarCodigoActivity" />
         <activity android:name=".Controller.GerarCodigoActivity" />
-        <activity android:name=".onboarding2" />
-        <activity android:name=".onboarding3" />
-        <activity android:name=".home" />
-        <activity android:name=".pagina_empresa" />
-        <activity android:name=".pagina_empresa_codigo_resgate" />
-        <activity android:name=".pagina_empresa_id" />
-        <activity android:name=".pagina_gerar_codigo_resgate" />
-        <activity android:name=".perfil_cliente" />
-        <activity android:name=".perfil_empresa" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".Controller.Onboarding1Activity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

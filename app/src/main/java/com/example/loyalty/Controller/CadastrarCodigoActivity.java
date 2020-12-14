@@ -15,7 +15,6 @@ import com.example.loyalty.Model.Empresa;
 import com.example.loyalty.Model.Ponto;
 import com.example.loyalty.R;
 import com.example.loyalty.Util.BancoDadosSingleton;
-import com.example.loyalty.home;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -95,7 +94,7 @@ public class CadastrarCodigoActivity extends AppCompatActivity {
        // finish();
     }
     public void ButtonHome(View view) {
-        Intent it = new Intent(getBaseContext(), home.class);
+        Intent it = new Intent(getBaseContext(), HomeActivity.class);
         startActivity(it);
     }
 }
