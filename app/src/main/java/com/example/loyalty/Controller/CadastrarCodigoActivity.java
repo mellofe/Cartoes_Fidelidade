@@ -80,9 +80,11 @@ public class CadastrarCodigoActivity extends AppCompatActivity {
                         Toast.makeText(this,"Você ganhou " + String.valueOf(codigos.get(i).getNumeroPontos()) + " ponto",Toast.LENGTH_LONG).show();
                     else
                         Toast.makeText(this,"Você ganhou " + String.valueOf(codigos.get(i).getNumeroPontos()) + " pontos",Toast.LENGTH_LONG).show();
+                } else {
+                    Toast.makeText(this,"Código de Pontos já validado" ,Toast.LENGTH_LONG).show();
                 }
             } else {
-                Toast.makeText(this,"Código de Pontos já validado" ,Toast.LENGTH_LONG).show();
+                Toast.makeText(this,"Código inválidado!" ,Toast.LENGTH_LONG).show();
             }
         }
        // finish();
